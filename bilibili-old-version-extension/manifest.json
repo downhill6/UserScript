@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "bilibili old version",
+  "description": "Switch to older versions of bilibili using ua",
+  "version": "0.0.1",
+  "icons": {
+    "16": "./images/icon-16.png",
+    "32": "./images/icon-32.png",
+    "48": "./images/icon-48.png",
+    "128": "./images/icon-128.png"
+  },
+  "permissions": ["storage", "declarativeNetRequest"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "switch_ua1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  }
+}
