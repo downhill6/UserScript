@@ -10,19 +10,22 @@
 // ==/UserScript==
 
 (function () {
-    'use strict';
-  
-    const BLOCKS = ['[国际新闻]'];
-    function setup() {
-      const tbodys = document.querySelector('table.forumbox')?.children ?? [];
-      for (const tb of tbodys) {
-        const title = tb.querySelector('span.titleadd2 a');
-        if (BLOCKS.includes(title?.textContent)) {
-          tb.style.display = 'none';
-        }
+  'use strict';
+
+  const BLOCKS = ['[国际新闻]'];
+  function block() {
+    const tbodys = document.querySelector('table.forumbox')?.children ?? [];
+    for (const tb of tbodys) {
+      const title = tb.querySelector('span.titleadd2 a');
+      if (BLOCKS.includes(title?.textContent)) {
+        tb.style.display = 'none';
       }
     }
-  
-    setup();
-  })();
-  
+  }
+
+  function setup() {
+    block();
+    setInterval(block, 1500);
+  }
+  setup();
+})();
